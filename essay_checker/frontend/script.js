@@ -1,4 +1,4 @@
-const API = 'http://127.0.0.1:8000';
+const API = 'https://essay-checker-pis3.onrender.com';
 
 const essay = document.querySelector('#essay');
 const counter = document.querySelector('#counter');
