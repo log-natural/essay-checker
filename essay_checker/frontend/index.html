@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자소서 컨펌받기</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="page">
+    <section class="card hero">
+      <div class="eyebrow">ESSAY REVIEW</div>
+      <h1>자소서 컨펌받기</h1>
+      <p class="warning">저장되지 않습니다. 반드시 자소서 파일을 따로 저장하세요.</p>
+
+      <label>지원 학교</label>
+      <div class="autocomplete">
+        <input id="school" autocomplete="off" placeholder="학교 이름을 입력해줘">
+        <div id="schoolResults" class="results hidden"></div>
+      </div>
+
+      <label for="question">자소서 문항 <span>· 선택 입력</span></label>
+      <textarea id="question" class="question" placeholder="자기소개서 문항 입력"></textarea>
+
+      <div class="essay-label"><label for="essay">자기소개서</label><span id="counter">0자</span></div>
+      <textarea id="essay" class="essay" placeholder="자기소개서 붙여넣기"></textarea>
+
+      <button id="reviewBtn">자소서 컨펌하기</button>
+      <p id="status" class="status"></p>
+    </section>
+
+    <section id="resultSection" class="card result hidden">
+      <div class="result-head">
+        <div>
+          <div class="eyebrow">AI FEEDBACK</div>
+          <h2>컨펌 결과</h2>
+        </div>
+      </div>
+      <div id="resultBody"></div>
+    </section>
+
+    <footer><a href="log-natural.github.io" target="_blank" rel="noopener noreferrer">Made by @log_natural</a></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

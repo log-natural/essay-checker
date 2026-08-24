@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box
+}
+
+html {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    color: #172033;
+    background: #fff
+}
+
+body {
+    margin: 0;
+    background: #fff
+}
+
+.page {
+    width: min(920px, calc(100% - 32px));
+    margin: 52px auto 28px
+}
+
+.card {
+    border: 1px solid #d8e1ee;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(37, 99, 235, .06);
+    padding: 38px
+}
+
+.hero h1 {
+    margin: 6px 0 8px;
+    font-size: 34px;
+    letter-spacing: -1.5px
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: #2563eb
+}
+
+.warning {
+    margin: 0 0 30px;
+    color: #dc2626;
+    font-size: 14px;
+    font-weight: 600
+}
+
+label {
+    display: block;
+    margin: 22px 0 9px;
+    font-size: 14px;
+    font-weight: 750
+}
+
+label span {
+    color: #8b95a7;
+    font-weight: 500
+}
+
+.autocomplete {
+    position: relative
+}
+
+.autocomplete input,
+input,
+textarea {
+    font: inherit
+}
+
+.autocomplete input,
+.question,
+.essay {
+    width: 100%;
+    border: 1px solid #d8e1ee;
+    border-radius: 12px;
+    background: #fff;
+    outline: none;
+    transition: .15s
+}
+
+.autocomplete input {
+    height: 48px;
+    padding: 0 15px
+}
+
+.autocomplete input:focus,
+.question:focus,
+.essay:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 4px #eff6ff
+}
+
+.results {
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    top: 54px;
+    border: 1px solid #d8e1ee;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 14px 32px rgba(23, 32, 51, .10);
+    overflow: hidden
+}
+
+.result-item:hover {
+    background: #eff6ff
+}
+
+.result-name {
+    font-weight: 700
+}
+
+.result-type {
+    font-size: 12px;
+    color: #64748b;
+    margin-left: 7px
+}
+
+.question {
+    min-height: 88px;
+    padding: 13px 15px;
+    resize: vertical
+}
+
+.essay-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.essay-label label {
+    margin-bottom: 9px
+}
+
+.essay-label span {
+    font-size: 13px;
+    color: #64748b
+}
+
+.essay {
+    min-height: 380px;
+    padding: 16px;
+    line-height: 1.75;
+    resize: vertical
+}
+
+button {
+    width: 100%;
+    height: 52px;
+    margin-top: 20px;
+    border: 0;
+    border-radius: 12px;
+    background: #2563eb;
+    color: #fff;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer
+}
+
+button:hover {
+    background: #1d4ed8
+}
+
+button:disabled {
+    opacity: .6;
+    cursor: wait
+}
+
+.status {
+    min-height: 20px;
+    margin: 10px 0 0;
+    color: #64748b;
+    font-size: 13px
+}
+
+.result {
+    margin-top: 18px
+}
+
+.result h2 {
+    margin: 5px 0 0;
+    font-size: 25px
+}
+
+.summary {
+    padding: 16px;
+    border-radius: 12px;
+    background: #eff6ff;
+    line-height: 1.7;
+    margin-top: 22px
+}
+
+.section-title {
+    margin: 28px 0 10px;
+    font-size: 15px;
+    font-weight: 800
+}
+
+.issue {
+    border-top: 1px solid #e8edf4;
+    padding: 18px 0
+}
+
+.badge {
+    display: inline-block;
+    border-radius: 999px;
+    background: #eff6ff;
+    color: #2563eb;
+    padding: 5px 9px;
+    font-size: 12px;
+    font-weight: 800
+}
+
+.issue p {
+    margin: 8px 0;
+    line-height: 1.7
+}
+
+.alternatives {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 9px
+}
+
+.alt {
+    padding: 7px 10px;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    color: #1d4ed8;
+    background: #fff;
+    font-size: 13px
+}
+
+.restricted {
+    border: 1px solid #fecaca;
+    background: #fff7f7;
+    border-radius: 12px;
+    padding: 15px;
+    margin-top: 12px
+}
+
+.question-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #eef2f7;
+    line-height: 1.6
+}
+
+.hidden {
+    display: none
+}
+
+footer {
+    text-align: center;
+    margin: 25px 0;
+    color: #94a3b8;
+    font-size: 13px
+}
+
+footer a {
+    color: inherit;
+    text-decoration: none
+}
+
+footer a:hover {
+    color: #2563eb
+}
+
+@media(max-width:600px) {
+    .page {
+        width: calc(100% - 24px);
+        margin: 22px auto
+    }
+
+    .card {
+        padding: 23px 18px;
+        border-radius: 16px
+    }
+
+    .hero h1 {
+        font-size: 28px
+    }
+
+    .essay {
+        min-height: 360px
+    }
+}
+
+.result-item {
+    transition: background-color 0.12s ease;
+    cursor: pointer;
+}
+
+#status.error {
+    color: #d93025;
+    font-weight: 500;
+}
+
+.result-item.active {
+    background: #eef5ff;
+}
+
+.result-item.active .result-name {
+    color: #2454d8;
+}
