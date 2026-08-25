@@ -1,12 +1,25 @@
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from pathlib import Path
 import json
 import os
 import re
-
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
+
+load_dotenv()
+
+app = FastAPI(title="자소서 컨펌 API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://essay-checker-frontend.onrender.com",
+    ],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # =========================================================
 # 환경변수
@@ -15,7 +28,7 @@ from pydantic import BaseModel
 BASE = Path(__file__).resolve().parent
 
 # backend/.env 읽기
-load_dotenv(BASE / ".env")
+#load_dotenv(BASE / ".env")
 
 API_KEY = os.getenv("OPENAI_API_KEY", "").strip()
 MODEL = os.getenv("OPENAI_MODEL", "gpt-5.6-luna").strip()
@@ -32,29 +45,6 @@ try:
     from openai import OpenAI
 except ImportError:
     OpenAI = None
-
-
-# =========================================================
-# FastAPI
-# =========================================================
-
-app = FastAPI(
-    title="자소서 컨펌 API",
-    version="1.0.0"
-)
-
-# 프론트엔드에서 접근할 수 있도록 CORS 설정
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://127.0.0.1:5500",
-        "http://localhost:5500",
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
 
 # =========================================================
 # 학교 데이터
